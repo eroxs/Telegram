@@ -466,7 +466,7 @@ void Connection::sendData(NativeByteBuffer *buff, bool reportAck, bool encrypted
             std::string *currentSecret = getCurrentSecret(useSecret);
             if (currentSecret->length() >= 17 && (*currentSecret)[0] == '\xdd') {
                 currentProtocolType = ProtocolTypeDD;
-            } else if (currentSecret->length() > 17 && (*currentSecret)[0] == '\xee') {
+            } else if (currentSecret->length() > 17 && (*currentSecret)[0] == '\xcc') {
                 currentProtocolType = ProtocolTypeTLS;
             } else {
                 currentProtocolType = ProtocolTypeEF;
